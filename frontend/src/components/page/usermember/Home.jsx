@@ -9,10 +9,12 @@ function Home() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col">
-      <div className="bg-bkpage min-h-screen">
+    <div className="grid">
+      <div className="bg-bkpage">
         <div className='flex items-center justify-around'>
-          <img src={Logo} alt='logo' className='h-10 w-24 cursor-pointer md:flex hidden  ' />
+          <div className="">
+            <img src={Logo} alt='logo' className='h-16 w-24  md:flex hidden  ' />
+          </div>
           <ul className='md:flex hidden uppercase items-center gap-8 text-white px-4'>
             <NavLinks />
           </ul>
@@ -32,30 +34,52 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className='w-full h-full'>
-          <div className="bg-bakery bg-center bg-no-repeat ">
-            <div className=''>
-              <h1 className='text-white text-9xl text-center p-4  font-extrabold '>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-200">
-                  Easy Bakery
-                </span>
-              </h1>
+      </div>
+
+      <div className="flex bg-bkpage h-screen">
+        <div className="grid m-6 mt-44 text-white justify-start">
+          <div className="text-xl text-center">
+            เลือกดูรายการอาหารเพื่อสั่งซื้อ
+            <div className='flex ml-8'>
+              <img src={Buy} alt='buy' className=" bg-[#1DF659] cursor-pointer h-14 border-2  border-neutral-950 " />
+              <button className="bg-[#3bcb5f] text-xl px-6 h-14 border-2 border-neutral-950">เลือกซื้อ</button>
             </div>
-            <div className="flex flex-col px-28">
-              <div className="text-xl p-2 py-1 mt-8">
-                เลือกดูรายการอาหารเพื่อสั่งซื้อ
-              </div>
-              <div className='h-full relative  text-white p-2'>
-                <div className='flex items-center'>
-                  <img src={Buy} alt='buy' className=" bg-[#1DF659] cursor-pointer h-14 border-2  border-neutral-950 " />
-                  <button className="bg-[#3bcb5f] text-xl px-6 h-14 border-2 border-neutral-950">เลือกซื้อ</button>
-                </div>
+          </div>
+        </div>
+        <div className='place-items-center bg-bakery bg-cover h-full'>
+          <h1 className='text-white text-9xl text-center font-extrabold '>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-200">
+              Easy Bakery
+            </span>
+          </h1>
+        </div>
+      </div>
+
+      {/* <div className='w-full h-full'>
+        <div className="bg-bakery bg-center bg-no-repeat ">
+          <div className=''>
+            <h1 className='text-white text-9xl text-center p-4  font-extrabold '>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-200">
+                Easy Bakery
+              </span>
+            </h1>
+          </div>
+          <div className="flex flex-col px-28">
+            <div className="text-xl p-2 py-1 mt-8">
+              เลือกดูรายการอาหารเพื่อสั่งซื้อ
+            </div>
+            <div className='h-full relative  text-white p-2'>
+              <div className='flex items-center'>
+                <img src={Buy} alt='buy' className=" bg-[#1DF659] cursor-pointer h-14 border-2  border-neutral-950 " />
+                <button className="bg-[#3bcb5f] text-xl px-6 h-14 border-2 border-neutral-950">เลือกซื้อ</button>
               </div>
             </div>
           </div>
-
         </div>
-      </div>
+      </div> */}
+
+
+
     </div>
   )
 }
