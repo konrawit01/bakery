@@ -5,22 +5,22 @@ const NavLinks = () => {
     const HeaderLink = [
         {
             name: "หน้าหลัก",
-            href: "/",
+            href: "/HomeSale",
             current: false,
             // icon: <TiShoppingCart />,
         },
         {
-            name: "สรุปรายการสั่งชื้อ",
-            href: "/OrderSummary",
+            name: "รับออเดอร์",
+            href: "/WaitingForOrderEY",
             current: false,
             // icon: <MdSell />
         },
         {
-            name: "รายการสินค้า",
-            href: "/ProductList",
+            name: "ดูรายการสินค้า",
+            href: "/ListProductEY",
             current: false,
             // icon: <FaWarehouse />,
-        }
+        },
     ];
     return (
         <>
