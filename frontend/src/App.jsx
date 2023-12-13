@@ -14,6 +14,9 @@ import Signup_usermember from './components/page/usermember/Signup_usermember';
 {/* -------------------- Route employee ------------------- */}
 import LoginEmployee from "./components/page/employee/LoginEmployee";
 import HomeSale from './components/page/employee/HomeSale';
+import GetOrderEY from "./components/page/employee/GetOrderEY";
+import ListProductEY from "./components/page/employee/ListProductEY";
+import WaitingForOrderEY from "./components/page/employee/WaitingForOrderEY";
 
 {/* -------------------- Route admin ------------------- */}
 import LoginAdmin from './components/page/admin/LoginAdmin';
@@ -35,6 +38,9 @@ function App() {
           {/* -------------------- Route employee ------------------- */}
           <Route path="/LoginEmployee" element={<LoginEmployee />} />
           <Route path="/HomeSale" element={<RequireTokenEmployee> <HomeSale /> </RequireTokenEmployee> } />
+          <Route path="/GetOrderEY" element={<RequireTokenEmployee> <GetOrderEY /> </RequireTokenEmployee>} />
+        <Route path="/ListProductEY" element={<RequireTokenEmployee> <ListProductEY /> </RequireTokenEmployee>} />
+        <Route path="/WaitingForOrderEY" element={<RequireTokenEmployee> <WaitingForOrderEY /> </RequireTokenEmployee>} />
 
           {/* -------------------- Route admin ------------------- */}
           <Route path="/LoginAdmin" element={<LoginAdmin />} />
