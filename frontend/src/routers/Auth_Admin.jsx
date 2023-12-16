@@ -35,7 +35,7 @@ export function RequireTokenAdmin({ children }) {
             }
         })
             .then((res) => {
-                console.log("res:admin", res.data.decoded)
+                // console.log("res:admin", res.data.decoded)
                 if (res.data.decoded.a_level === "admin") {
                     console.log("------------------ Passsssssss!! --------------------")
                 } else {

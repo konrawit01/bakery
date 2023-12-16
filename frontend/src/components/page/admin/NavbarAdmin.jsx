@@ -5,25 +5,25 @@ function NavbarAdmin() {
     const HeaderLink = [
         {
             name: "หน้าหลัก",
-            href: "/####",
+            href: "/AdminDashboard",
             current: false,
             // icon: <TiShoppingCart />,
         },
         {
             name: "ดูสรุปรายงานการขาย",
-            href: "/#####",
+            href: "/SalesReport",
             current: false,
             // icon: <MdSell />
         },
         {
             name: "จัดการสินค้า",
-            href: "/######",
+            href: "/ManageProduct",
             current: false,
             // icon: <FaWarehouse />,
         },
         {
             name: "จัดการสมาชิก",
-            href: "/######",
+            href: "/ManageUser",
             current: false,
             // icon: <FaWarehouse />,
         },

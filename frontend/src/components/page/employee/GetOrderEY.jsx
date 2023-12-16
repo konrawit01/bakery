@@ -92,7 +92,7 @@ function GetOrderEY() {
                             <button className='h-7 w-24 border border-slate-950'>500</button>
                         </div>
                         <div className='pl-28'>
-                            <button className=''>ชำระเงิน</button>
+                            <button className=''><a href="/TotalSummary">ชำะเงิน</a></button>
                         </div>
                     </div>
                 </div>

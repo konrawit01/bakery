@@ -11,7 +11,7 @@ export function RequireToken({ children }) {
             }
         })
             .then((res) => {
-                console.log("res:usermember", res.data)
+                // console.log("res:usermember", res.data)
                 if (res.data.decoded.a_level === "usermember") {
                     console.log("------------------ Passsssssss!! --------------------")
                 } else {

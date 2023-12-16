@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { FiMenu } from "react-icons/fi";
-import { Link } from 'react-router-dom';
-import { BsChevronDown } from "react-icons/bs";
+import Logo from '../../../assets/images/logo.png'
+import NavbarAdmin from './NavbarAdmin';
 
 function AdminDashboard() {
 
     const [open, setOpen] = useState(true)
+
 
     const handleLogout = (e) => {
         e.preventDefault();
@@ -13,123 +14,51 @@ function AdminDashboard() {
         window.location = '/';
     }
 
-    const HeaderLink = [
-        {
-            name: "หน้าแรก",
-            href: "/admin",
-            current: false,
-            // icon: <TiShoppingCart />,
-        },
-        {
-            name: "จัดการสมาชิก",
-            href: " ",
-            current: false,
-            // icon: <MdSell />
-        },
-        {
-            name: "จัดการพนักงาน",
-            href: "",
-            current: false,
-            // icon: <FaWarehouse />,
-        },
-        {
-            name: "จัดการประเภทสินค้า",
-            href: "",
-            current: false,
-            // icon: <BiSave />,
-        },
-        {
-            name: "จัดการเมนูขนม",
-            href: "",
-            current: false,
-            // icon: <BiSave />,
-        },
-        {
-            name: "รวมสรุปรายงาน",
-            href: "",
-            current: false,
-            submenu: true,
-            submenuItems: [
-                {
-                    subname: "รายงานยอดขายรายวัน",
-                    subhref: "/OU/Save_Expenses"
-                },
-                {
-                    subname: "รายงานยอดขายรายเดือน",
-                    subhref: "/OU/Save_Expenses"
-                },
-                {
-                    subname: "รายงานยอดขายรายปี",
-                    subhref: "/OU/Save_Expenses"
-                },
-                {
-                    subname: "รายงานสต๊อก-รายการขนม",
-                    subhref: "/OU/Save_Expenses"
-                },
 
-
-            ]
-        },
-        {
-            name: "จัดการสถานะ",
-            href: "",
-            current: false,
-            // icon: <BiSave />,
-        },
-        {
-            name: "จัดการแจ้งเตือน",
-            href: "",
-            current: false,
-            // icon: <BiSave />,
-        },
-
-    ];
-
-    const [submenuOpne, setSubmenuOpne] = useState(false);
 
 
     return (
-        <>
-            <section className='flex gap-6'>
-                <div className={`bg-[#0e0e0e] min-h-screen ${open ? "w-52" : "w-12"} text-white duration-500 p-2`}>
-                    <div className=' flex justify-end'>
-                        <FiMenu size={26} className='cursor-pointer' onClick={() => setOpen(!open)} />
-                    </div>
-                    <div className='mt-4 flex flex-col gap-4 relative'>
-                        {HeaderLink.map((data, index) => (
-                            <Link to={data.href} key={index} className="flex items-center text-sm gap-3.5 p-2 hover:bg-gray-800" >
-                                <div>{data.icon ? data.icon : <FiMenu size={20} />}</div>
-                                <h2 className={`whitespace-pre duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"}`}>{data.name}</h2>
-                                
-                                {data.submenu && (
-                                <BsChevronDown className={`${submenuOpne && "rotate-180"}`} onClick={() => {setSubmenuOpne(submenuOpne)}} />
-                                )}
+        <div className="w-full ">
 
-                                {data.submenu  && submenuOpne && (
-                                            <ui>
-                                                {data.submenuItems.map((submenuItems, i) => (
-                                                    <li key={i} className='text-gray-300 flex items-center gap-x5 cursor-pointer p-2 px-5 hover:bg-sky-400'>
-                                                        <a to={submenuItems.subhref}>{submenuItems.subname}</a>
-                                                       
-                                                    </li>
-                                                ))}
-                                                
-                                            </ui>
-                                )}
-                            </Link>
-                        ))}
-                        <button className='flex items-center text-sm gap-3.5 p-2 hover:bg-gray-800 ' onClick={handleLogout}>
-                            <div><FiMenu size={20} /></div>
-                            <h2
-                                className={`whitespace-pre duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"}`}>ออกจากระบบ</h2>
+            {/* {!popupPlusProduct ?
+                <PopupPlusProduct popupPlusProduct={popupPlusProduct} setPopupPlusProduct={setPopupPlusProduct} />
+                : null
+            } */}
+
+            {/* ////----------------------------- ตัวอย่าง popup ------------------------------//// */}
+
+            {/* {!popupChoosePackage ?
+                <PopupChoosePackage popupChoosePackage={popupChoosePackage} setPopupChoosePackage={setPopupChoosePackage} id_package={id_package} dataUser={dataUser} dataPainter={dataPainter} />
+                : null
+            } */}
+
+
+
+            <div className="">
+                <div className='flex items-center justify-around'>
+                    <div className="">
+                        <img src={Logo} alt='logo' className='h-16 w-24  md:flex hidden  ' />
+                    </div>
+                    <ul className='md:flex hidden uppercase items-center gap-8 text-white px-4'>
+                        <NavbarAdmin />
+                    </ul>
+                    <ul className={`fixed top-0 z-50 bg-white w2/3 h-screen shadow-2xl md:hidden flex-col gap-10 text-medium p-7 pt-6 duration-500
+                                ${open ? 'left-0' : 'left-[100%]'}`}>
+                        <NavbarAdmin />
+                    </ul>
+                    <ul className='text-2xl md:hidden z-50 text-white' onClick={() => setOpen(!open)}>
+                        <FiMenu />
+                    </ul>
+                    <div className='p-2'>
+                        <button onClick={handleLogout} className='text-white p-1 px-4 rounded-md bg-slate-600'>
+                            Logout
                         </button>
                     </div>
                 </div>
-                <div className=''>
-                    HOME admin
-                </div>
-            </section>
-        </>
+            </div>
+
+            
+        </div>
 
     )
 }
