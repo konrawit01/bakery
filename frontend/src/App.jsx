@@ -5,7 +5,8 @@ import { RequireTokenEmployee } from "./routers/Auth_Employee";
 import { RequireTokenAdmin } from "./routers/Auth_Admin";
 
 {/* -------------------- Route Login_homepage ------------------- */}
-import Home from "./components/page/usermember/Home";
+import Home from "./components/page/user/Home";
+// import Home from "./components/page/usermember/Home";
 {/* -------------------- Route Login_usermember ------------------- */}
 import LoginUsermember from './components/page/usermember/LoginUsermember';
 import Homeusermember from './components/page/usermember/HomeUsermember';
@@ -37,7 +38,7 @@ function App() {
           {/* -------------------- Route Login_usermember ------------------- */}
           <Route path="/LoginUsermember" element={<LoginUsermember />} />
           <Route path="/Signup_usermember" element={<Signup_usermember />} />
-          <Route path="/Home" element={<RequireToken> <Homeusermember /> </RequireToken> } />
+          <Route path="/Homeusermember" element={<RequireToken> <Homeusermember /> </RequireToken> } />
 
           {/* -------------------- Route employee ------------------- */}
           <Route path="/LoginEmployee" element={<LoginEmployee />} />
